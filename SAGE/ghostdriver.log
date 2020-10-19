@@ -1,0 +1,33 @@
+[INFO  - 2020-10-19T07:30:02.071Z] GhostDriver - Main - running on port 51209
+[INFO  - 2020-10-19T07:30:04.167Z] Session [e7a2de20-11dc-11eb-a737-25bec4ae6a11] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2020-10-19T07:30:04.167Z] Session [e7a2de20-11dc-11eb-a737-25bec4ae6a11] - page.customHeaders:  - {}
+[INFO  - 2020-10-19T07:30:04.167Z] Session [e7a2de20-11dc-11eb-a737-25bec4ae6a11] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"windows-10-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2020-10-19T07:30:04.169Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: e7a2de20-11dc-11eb-a737-25bec4ae6a11
+[ERROR - 2020-10-19T07:30:09.238Z] Session [e7a2de20-11dc-11eb-a737-25bec4ae6a11] - page.onError - msg: ReferenceError: Can't find variable: inJournalScope
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-10-19T07:30:09.238Z] Session [e7a2de20-11dc-11eb-a737-25bec4ae6a11] - page.onError - stack:
+  global code (https://journals.sagepub.com/doi/pdf/10.2307/2667055:161)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-10-19T07:30:09.285Z] Session [e7a2de20-11dc-11eb-a737-25bec4ae6a11] - page.onError - msg: ReferenceError: Can't find variable: inPortalHome
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-10-19T07:30:09.285Z] Session [e7a2de20-11dc-11eb-a737-25bec4ae6a11] - page.onError - stack:
+  global code (https://journals.sagepub.com/doi/pdf/10.2307/2667055:1117)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-10-19T07:30:09.342Z] Session [e7a2de20-11dc-11eb-a737-25bec4ae6a11] - page.onError - msg: ReferenceError: Can't find variable: trapKeys
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-10-19T07:30:09.342Z] Session [e7a2de20-11dc-11eb-a737-25bec4ae6a11] - page.onError - stack:
+  global code (https://journals.sagepub.com/doi/pdf/10.2307/2667055:2532)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-10-19T07:30:09.364Z] Session [e7a2de20-11dc-11eb-a737-25bec4ae6a11] - page.onError - msg: ReferenceError: Can't find variable: authorsPatch
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-10-19T07:30:09.364Z] Session [e7a2de20-11dc-11eb-a737-25bec4ae6a11] - page.onError - stack:
+  global code (https://journals.sagepub.com/doi/pdf/10.2307/2667055:2838)
+
+  phantomjs://platform/console++.js:263 in error

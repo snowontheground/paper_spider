@@ -1,4 +1,5 @@
 import requests
+import os
 
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
@@ -10,6 +11,16 @@ from bs4 import BeautifulSoup
 from science_direct import get_science_direct_link as sd
 
 base_url = "https://journals.sagepub.com"
+
+journal_code = {
+    "Entrepreneurship Theory and Practice": "etpd",
+    "Human Relations": "huma",
+    "Journal of Management": "jom",
+    "Journal of Marketing": "jmxa",
+    "Journal of Marketing Research": "mrja",
+    "Journal of the Academy of Marketing Science": "jams",
+    "Organization Studies": "oss"
+}
 
 
 def get_volume_link(journal_name):
@@ -62,10 +73,10 @@ def get_volume_link(journal_name):
 
 def get_article_en(journal_name, text, article_url, journal_num, volume_info, issue_info):
     if text != '':
-        file_name = 'oss' + str(journal_num) + '_' + volume_info + '_' + issue_info + '.html'
+        file_name = journal_code[journal_name] + str(journal_num) + '_' + volume_info + '_' + issue_info + '.html'
         print("EN文件 " + article_url + ' ' + str(journal_num))
-        with open("../../../../paper data/SAGE/Organization Studies/en" + file_name,
-                  "w", encoding='utf-8') as f:
+        path = "../../../../paper data/SAGE/" + journal_name + "/en/"
+        with open(path + file_name, "w", encoding='utf-8') as f:
             f.write(text)
             with open("../resources/log/" + sd.handle_journal_name_without_capital(journal_name) + '.log',
                       "a", encoding='utf-8') as f_log:
@@ -87,10 +98,11 @@ def get_article_cn(journal_name, article_url, journal_num, volume_info, issue_in
         response = requests.get(article_url, headers=headers)
         if response.status_code == 200:
             response.encoding = 'utf-8'
-            file_name = 'oss' + str(journal_num) + '_' + volume_info + '_' + issue_info + '.html'
+
+            file_name = journal_code[journal_name] + str(journal_num) + '_' + volume_info + '_' + issue_info + '.html'
             print("CN文件 " + article_url + ' ' + str(journal_num))
-            with open("../../../../paper data/SAGE/Organization Studies/cn/" + file_name,
-                      "w", encoding='utf-8') as f:
+            path = "../../../../paper data/SAGE/" + journal_name + '/cn/'
+            with open(path + file_name, "w", encoding='utf-8') as f:
                 f.write(response.text)
                 with open("../resources/log/" + sd.handle_journal_name_without_capital(journal_name) + '.log',
                           "a", encoding='utf-8') as f_log:
@@ -112,8 +124,8 @@ def get_article(journal_name):
     }
 
     journal_num = 1
-
-    with open("../resources/txt/organization-studies.txt", 'r', encoding='utf-8') as f:
+    path = "../resources/txt/" + sd.handle_journal_name_without_capital(journal_name) + ".txt"
+    with open(path, 'r', encoding='utf-8') as f:
         lines = f.readlines()
         for line in lines:
             url, date_info = line.split(' ')[0], line.split(' ')[1]
@@ -138,7 +150,7 @@ def get_article(journal_name):
             except requests.ConnectionError as e:
                 print("Error", e.args)
 
-
+whe
 if __name__ == '__main__':
     # get_volume_link('Entrepreneurship Theory and Practice')
     get_article("Organization Studies")
